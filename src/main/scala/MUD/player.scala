@@ -1,0 +1,6 @@
+package MUD
+
+class Player() {
+
+    
+}
