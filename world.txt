@@ -1,0 +1,17 @@
+Number of rooms
+Room name 1
+Room desc 1, put on one line only
+Number of items
+Item 1
+Item 1 desc
+Item 2
+Item 2 desc
+Exits, separated by commas, listed as integers (-1 or 1) if you can move in that direction or not (no spaces - n,s,e,w,u.d)
+Room name 2
+Room desc 2
+Number of items
+Item 1 name
+Item 1 desc
+Exits
+
+etc
