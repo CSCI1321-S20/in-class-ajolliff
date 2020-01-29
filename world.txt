@@ -11,7 +11,7 @@ A short blade with a silver sheen. The intricantly carved handle is embedded wit
 Potion
 A mysterious blue liquid in a short, wide flask, stopped with a cork. The liquid is smoking slightly inside the bottle.
 Book
-An old book that appears to contain many powerful spells. It is bound tightly by a metal lock and chain. Hopefully the shopkeeper has a key somewhere.
+An old book that contains many powerful spells in an ancient language.
 -1,-1,-1,1,-1,-1
 Marketplace
 A section of road that has many temporary stalls and tents set up. Many people appear to be shopping and speaking with the vendors, but you cannot see what they are selling.
