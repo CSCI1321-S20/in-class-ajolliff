@@ -8,7 +8,7 @@ object Main {
         println("Welcome!")
         val character = new Player(Room.world(0))
 
-        // println(Room.world(0).description())
+        println(Room.world(0).description())
 
         var comm = ""
         while (comm != "exit") {

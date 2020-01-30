@@ -5,13 +5,16 @@ class Room(val rmName: String, val desc: String, private var items: List[Item], 
     def description(): Unit = {
         println(rmName)
         println(desc)
-        println(items)
-        println(exits)
+        println(items.name + items.desc)    //this doesn't work
+        println(exits)      //don't know how to format items and exits in a way that will read well from the lists
     }
-    // def getExit(dir: Int): Option[Room] = {
-    //     if (dir >= 0) Some(newPos)
-    //     else None
-    // }
+    def getExit(dir: Int): Option[Room] = {
+        if (dir >= 0) {
+            val newPos = Player(position)(exits(dir))   //syntax??
+            Some(newPos)
+             } 
+        else None
+    }
     
     
     def getItem(itemName: String): Option[Item] = {
