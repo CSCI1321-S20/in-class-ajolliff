@@ -1,9 +1,9 @@
 package MUD
 
-class Player() {
+class Player(private var position:Room) {
 
-    def processCommand(readLine: String): Unit = {
-        if (readLine == help) {println(""" 
+    def processCommand(comm: String): Unit = {
+        if (comm == "help") {println(""" 
             Possible commands:
             look - reprint the room description, exits, and items
             inv/inventory - open your inventory
@@ -12,56 +12,60 @@ class Player() {
             n/north - move north (or s/south, e/east, w/west, u/up, d/down)
             exit - leave the game
             """)}
-        else if (readLine == look) {println(Room.description())}
-        else if (readLine == (inv || inventory)) {Player.inventoryListing}
-        else if (readLine == get _) {Player.addToInventory} //syntax?
-        else if (readLine == drop _) {Player.getFromInventory}
-        else if (readLine == n || e || s || w || u || d || north || east || south || west || up || down) { 
-            dir match {
-                case (n || north) => north
-                case (s || south) => south
-                case (e || east) => east
-                case (w || west) => west
-                case (u || up) => up
-                case (d || down) => down
-                case(_) => println("That is an invalid input.")
-                Player.move(dir) //how to make a player move in the specified direction?
-            }
+        else if (comm == "look") {println(position.description)}
+        else if (comm == "inv" || comm == "inventory") {inventoryListing}
+        // else if (comm.startsWith("get")) {addToInventory(item)} 
+        // else if (comm.startsWith("drop")) {getFromInventory(itemName)}  
+    //     else if (comm == "n" || comm == "e" || comm == "s" || comm == "w" || comm == "u" || comm == "d" || comm == "north" || comm == "east" || comm == "south" || comm == "west" || comm == "up" || comm == "down") { 
+    //         comm match {
+    //             case ("n") => var dir = 0
+    //             case ("north") => var dir = 0
+    //             case ("s") => var dir = 1
+    //             case ("south") => var dir = 1
+    //             case ("e") => var dir = 2
+    //             case ("east") => var dir = 2
+    //             case ("w") => var dir = 3
+    //             case ("west") => var dir = 3
+    //             case ("u") => var dir = 4
+    //             case ("up") => var dir = 4
+    //             case ("d") => var dir = 5
+    //             case ("down") => var dir = 5
+    //             case(_) => println("You should probably never see this statement.")
+    //             move(dir)
+    //         }
             
-        }
-        else {println("Sorry, I don't know what you're asking me to do. If you need help, type 'help'")}  
-    }
+    //     }
+    //     else {println("Sorry, I don't know what you're asking me to do. If you need help, type 'help'.")}  
+     }
     
-    private var Inv = List(0)(0)
+    private var Inv = List[Item]()
 
-    def getFromInventory(itemName: String): Option[Item] = {
-        Inv.filter(itemName) 
-        Room.dropItem   //how will it reappear in the room?
-    }
+    // def getFromInventory(itemName: String): Option[Item] = {
+    //     Inv.filter(itemName) 
+    //     position.dropItem(item)
+    // }
     def addToInventory(item: Item): Unit = {
-        Room.getItem
-        item ::= Inv    //does this work? do I need something else?
+        position.getItem(item.name)
+        item :: Inv
     }
-    def inventoryListing(): String = {
+    def inventoryListing(): Unit = {
         println("Inventory:")
-        if (Inv._0 == _) {println(" " + Inv._0.Item.name + " - " + Inv._0.Item.desc)} //syntax? how to do more than one item?
+        if (Inv.isEmpty == false) {
+            for (i <- 0 until Inv.length) {
+                println(" " + Inv(i).name + " - " + Inv(i).desc)
+            }
+        }
         else println("You have no items in your inventory.")
     }
-    def move(dir: String): Unit = {
-        dir match {
-            case (north) => Room.getExit._0
-            case (south) => Room.getExit._1
-            case (east) => Room.getExit._2
-            case (west) => Room.getExit._3
-            case (up) => Room.getExit._4
-            case (down) => Room.getExit._5
-        }
-
-        if (Room.getExit == wall) println("You cannot move that direction.")
-        else if (Room.getExit == move) 
-
-        println(Room.description) //do I want the class Room desc or object Room desc?
-    }                            //don't know whats going on here
+    // def move(dir: Int): Unit = {
+    //         position.getExit(dir) match {
+    //             case None => println("That direction is blocked.")
+    //             case Some(position(dir)) => {
+    //                 position = dir  
+    //                 println(position.description)
+    //             }
+    //         }
+    //     }
 
     
 }

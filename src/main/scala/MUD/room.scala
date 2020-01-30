@@ -2,17 +2,16 @@ package MUD
 
 class Room(val rmName: String, val desc: String, private var items: List[Item], private val exits: Array[Int]) {
 
-    def description(): String = {
-        println(Room.name)
-        println(Room.desc)
-        println(Room.items)
-        println(Room.exits) //change to read a string from the ints given?
+    def description(): Unit = {
+        println(rmName)
+        println(desc)
+        println(items)
+        println(exits)
     }
-    def getExit(dir: Int): Option[Room] = {
-        exits.foreach(f: Int => Int)
-        if(f < 0) {wall}
-        else if (f > 0) {move}  //?? am confusion
-    }
+    // def getExit(dir: Int): Option[Room] = {
+    //     if (dir >= 0) Some(newPos)
+    //     else None
+    // }
     
     
     def getItem(itemName: String): Option[Item] = {
@@ -23,7 +22,7 @@ class Room(val rmName: String, val desc: String, private var items: List[Item], 
             case None => None
        }
     }
-    def dropItem(item: Item): Unit = item ::= items
+     def dropItem(item: Item): Unit = item :: items
     
 
 }  
@@ -36,6 +35,7 @@ object Room {
         val lines = source.getLines()
         val r = Array.fill(lines.next.toInt)(readRoom(lines))
         source.close()
+        r
     }
 
     def readRoom(lines: Iterator[String]): Room = {

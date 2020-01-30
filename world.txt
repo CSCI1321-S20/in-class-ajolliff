@@ -2,24 +2,24 @@
 Cobbled Street
 A wide, straight road made of cobblestone, lined with quaint shops and bustling with other people. The road continues to the north in front of you, and there is an open item shop to your right.
 0
-1,-1,1,-1,-1,-1
+2,-1,1,-1,-1,-1
 Rare Items Shoppe
 A small store with various weapons and potions lining the walls. Sunlight filters in through high windows, but otherwise the room is dimly lit by candles. The shopkeeper eyes you warily from behind the counter, drying an empty bottle with a mottled cloth.
 3
 Dagger
-A short blade with a silver sheen. The intricantly carved handle is embedded with a large red gemstone.
+A short blade with a silver sheen. The intricately carved handle is embedded with a large red gemstone.
 Potion
 A mysterious blue liquid in a short, wide flask, stopped with a cork. The liquid is smoking slightly inside the bottle.
 Book
 An old book that contains many powerful spells in an ancient language.
--1,-1,-1,1,-1,-1
+-1,-1,-1,0,-1,-1
 Marketplace
 A section of road that has many temporary stalls and tents set up. Many people appear to be shopping and speaking with the vendors, but you cannot see what they are selling.
 0
-1,1,-1,-1,-1,-1
+3,0,-1,-1,-1,-1
 Arena
 A circular colosseum. Inside, many adventurers are sparring.
 1
 Armor
-A set of light, leather armor. It does not appear to offer much protection, but something is better than nothing.
--1,1,-1,-1,-1,-1
+A set of light leather armor. It does not appear to offer much protection, but something is better than nothing.
+-1,2,-1,-1,-1,-1

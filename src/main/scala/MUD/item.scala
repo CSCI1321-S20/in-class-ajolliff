@@ -1,3 +1,3 @@
 package MUD
 
-case class Item(name:String, desc:String) //done
+case class Item(name:String, desc:String)
