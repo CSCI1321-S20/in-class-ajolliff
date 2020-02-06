@@ -36,15 +36,16 @@ object main extends JFXApp {
                 }
             }
 
-            // var lastTime = -1L
-            // val timer = AnimationTimer(time => {
-        //         if (lastTime >= 0) {
-        //             val delay = (time - lastTime)/1e9
-        //             grid.update(delay)
-        //         }
-        //         lastTime = time
-        //     })
-        // timer.start()
+            var lastTime = -1L
+            val timer = AnimationTimer(time => {
+                if (lastTime >= 0) {
+                    val delay = (time - lastTime)/1e9
+                    grid.update(delay)
+                    renderer.render(grid)
+                }
+                lastTime = time
+            })
+        timer.start()
         
         }
             
