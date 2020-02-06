@@ -23,7 +23,7 @@ object main extends JFXApp {
                 ke.code match {
                     case KeyCode.Left => grid.leftPressed()
                     case KeyCode.Right => grid.rightPressed()
-                    case KeyCode.Down => 
+                    case KeyCode.Up => grid.upPressed()
                     case _ => 
                 }
             }
@@ -31,13 +31,13 @@ object main extends JFXApp {
                 ke.code match {
                     case KeyCode.Left => grid.leftReleased()
                     case KeyCode.Right => grid.rightReleased()
-                    case KeyCode.Down => 
+                    case KeyCode.Up => grid.upReleased()
                     case _ => 
                 }
             }
 
-            var lastTime = -1L
-            val timer = AnimationTimer(time => {
+            // var lastTime = -1L
+            // val timer = AnimationTimer(time => {
         //         if (lastTime >= 0) {
         //             val delay = (time - lastTime)/1e9
         //             grid.update(delay)
@@ -47,7 +47,7 @@ object main extends JFXApp {
         // timer.start()
         
         }
-
+            
 
     }
 
